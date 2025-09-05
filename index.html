@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medicinal Plants — Preview</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Medicinal Plants Explorer</h1>
+  <p>Search plants, view where they grow, parts used, active compounds and medicines/products made from them.</p>
+</header>
+
+<div class="controls">
+  <div>
+    <button onclick="searchPlant()">Search Global</button>
+  </div>
+
+  <div class="search" style="max-width:760px">
+    <input id="search" type="search" placeholder="Search by common name, scientific name, use or compound (e.g., 'anti-inflammatory')">
+  </div>
+  <div style="width:200px">
+    <select id="filterUse">
+      <option value="all">All uses</option>
+    </select>
+  </div>
+  <div style="min-width:110px"><button id="resetBtn">Reset</button></div>
+</div>
+
+<main>
+  <section id="grid" class="grid" aria-live="polite"></section>
+</main>
+
+<!-- Modal -->
+<div id="backdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+  <div class="modal" role="document">
+    <div class="head">
+      <div>
+        <h2 id="md-title" style="margin:0"></h2>
+        <div id="md-scientific" style="color:var(--muted);font-style:italic"></div>
+      </div>
+      <div><button id="closeModal" style="background:transparent;border:0;font-size:1rem;cursor:pointer">✕ Close</button></div>
+    </div>
+    <div class="body">
+      <div>
+        <img id="md-image" src="" alt="">
+        <div style="margin-top:10px;font-size:0.95rem;color:var(--muted)">
+          <strong>Regions:</strong> <span id="md-regions"></span><br>
+          <strong>Parts used:</strong> <span id="md-parts"></span><br>
+          <strong>Preparations:</strong> <span id="md-preps"></span>
+        </div>
+      </div>
+      <div>
+        <div style="margin-bottom:8px"><strong>Primary uses</strong></div>
+        <ul id="md-uses" class="list"></ul>
+
+        <div style="margin-top:8px"><strong>Active compounds</strong></div>
+        <div id="md-compounds" style="margin-top:6px"></div>
+
+        <div style="margin-top:8px"><strong>Medicines / products</strong></div>
+        <ul id="md-products" class="list"></ul>
+
+        <div style="margin-top:10px;color:#b91c1c"><strong>Safety notes:</strong> <div id="md-safety" style="margin-top:6px"></div></div>
+
+        <div style="margin-top:12px"><strong>Sources / references</strong>
+          <ul id="md-sources" class="list"></ul>
+        </div>
+      </div>
+    </div>
+    <div style="padding:12px;border-top:1px solid #f2f2f2;text-align:right">
+      <small style="color:var(--muted)">Disclaimer: Informational only. Consult qualified healthcare providers before using medicinal plants.</small>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>🌿 Medicinal Plants</h3>
+      <p>
+        Unlock the wisdom of nature’s pharmacy.  
+        Explore medicinal plants, their healing powers, and  
+        their role in traditional & modern medicine.
+      </p>
+    </div>
+
+    <div class="footer-contact">
+      <h3>📞 Contact</h3>
+      <ul>
+        <li>Email: <a href="mailto:aashingh24@navgurukul.org">aashikasingh24@navgurukul.org</a></li>
+        <li>Phone: <a href="tel:+919876543210">+91 98765 43210</a></li>
+        <li>Location: Himachal Pradesh, India</li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="LinkedIn"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Medicinal Plants Website | Designed with ❤️ by <b>Aashika Singh</b></p>
+    <a href="#top" class="back-to-top">⬆ Back to Top</a>
+  </div>
+</footer>
+
+<!-- External JS -->
+<script src="script.js"></script>
+</body>
+</html>
